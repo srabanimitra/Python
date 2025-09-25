@@ -1,0 +1,58 @@
+LRU Page Replacement Algorithm
+==============================
+
+Author: Srabani Mitra (20220104111)
+
+Description:
+------------
+This project implements the Least Recently Used (LRU) page replacement algorithm
+using Python. The algorithm ensures that selecting the victim page (least recently
+used) is done in O(1) time.
+
+Data Structures Used:
+---------------------
+- OrderedDict from collections:
+  * Maintains the order of page usage.
+  * Allows moving recently used pages to the front.
+  * Provides O(1) operations for insertion, deletion, and updates.
+
+Efficiency:
+-----------
+- Victim selection (finding the LRU page) is O(1) because we always remove the
+  last item from the OrderedDict.
+- Updating the most recently used page is also O(1).
+
+How to Run:
+-----------
+On Windows:
+    run.bat
+
+On Linux/Mac:
+    ./run.sh
+
+Or directly:
+    python main.py
+
+Sample Input:
+-------------
+Capacity = 4
+Pages = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
+
+Sample Output:
+--------------
+Referencing page: 7
+Current frame state: 7
+Referencing page: 0
+Current frame state: 0 7
+Referencing page: 1
+Current frame state: 1 0 7
+Referencing page: 2
+Current frame state: 2 1 0 7
+Referencing page: 0
+Current frame state: 0 2 1 7
+Referencing page: 3
+Page replaced: 7
+Current frame state: 3 0 2 1
+Referencing page: 0
+Current frame state: 0 3 2 1
+...
