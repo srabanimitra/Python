@@ -1,0 +1,6 @@
+# Simple graph with no directed cycles
+P1 R1
+R1 P2
+P2 R2
+R2 P3
+# no edge back to earlier nodes
